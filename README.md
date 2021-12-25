@@ -269,7 +269,7 @@ Notice that this pod also contains the same data and that the database is resili
 
 Moving on to the scalibility:
 
-11. Creating a new `mysql-cluster.yaml` file:
+11. Create a new `mysql-cluster.yaml` file with 1 more instance, (instances: 3 => instances: 4):
 ```yaml
 apiVersion: mysql.oracle.com/v2alpha1
 kind: InnoDBCluster
@@ -282,14 +282,14 @@ spec:
     instances: 1
 ```
 
-12. 
+12. Apply the modified configuration file:
 
 ```bash
-$ kubectl apply -f config.yaml
+$ kubectl apply -f mysql-cluster.yaml
 ```
 output:
 ```bash
-ashok@Ashoks-Mac-mini Desktop % kubectl apply -f config.yaml
+ashok@Ashoks-Mac-mini Desktop % kubectl apply -f mysql-cluster.yaml.yaml
 innodbcluster.mysql.oracle.com/mycluster configured
 ```
 
